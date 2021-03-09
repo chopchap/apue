@@ -1,0 +1,12 @@
+# week01
+---
+### **Single UNIX Specification (POSIX)**
+   > *POSIX.1-2017 defines a standard operating system interface and environment, including a command interpreter (or “shell”), and common utility programs to support applications portability at the source code level.*
+
+### **Environment Setting up**
+   1. download & install VirtualBox by default settings so that you can use `VBox*` series command stand by
+   2. use this link: https://cdn.netbsd.org/pub/NetBSD/NetBSD-9.0/images/NetBSD-9.0-amd64.iso to download NetBSD ISO file (what is an ISO image? The name ISO was taken from the name of the file system used by optical media, which is usually ISO 9660. You can think of an ISO image as a complete copy of everything stored on a physical optical disc like CD, DVD, or Blu-ray disc—including the file system itself. They are a sector-by-sector copy of the disc, and no compression is used.  The idea behind ISO images is that you can archive an exact digital copy of a disc, and then later use that image to burn a new disc that’s in turn an exact copy of the original.  Most operating systems (and many utilities) also allow you to mount an ISO image as a virtual disc, in which case all your apps treat it as if a real optical disc were inserted.)
+   3. specific operations: https://stevens.netmeister.org/631/virtualbox/
+   4. we initially boot off the CD, but then boot off the disk once the OS installed without having to eject the CD from the VM(i.e. set Hard Disk as the first boot order option in storage setting in VBox)
+   5. network setting: select first adapter, keep it as NAT(Network Address Translation is designed for IP address conservation. It enables private IP networks that use unregistered IP addresses to connect to the Internet. NAT operates on a router, usually connecting two networks together, and translates the private (not globally unique) addresses in the internal network into legal addresses, before packets are forwarded to another network.)
+   ![alt text](https://github.com/chopchap/apue/blob/main/images/Port%20forwarding%20via%20NAT%20router.png?raw=true)
