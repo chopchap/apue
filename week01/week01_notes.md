@@ -1,9 +1,9 @@
 # week01_notes
 ---
-### **Single UNIX Specification (POSIX)**
+## **Single UNIX Specification (POSIX)**
    > *POSIX.1-2017 defines a standard operating system interface and environment, including a command interpreter (or “shell”), and common utility programs to support applications portability at the source code level.*
 
-### **Environment Setting up**
+## **Environment Setting up**
    1. download & install VirtualBox by default settings so that you can use `VBox*` series command stand by.
    2. use this link: https://cdn.netbsd.org/pub/NetBSD/NetBSD-9.0/images/NetBSD-9.0-amd64.iso to download NetBSD ISO file.
    > *(what is an **ISO image**? The name ISO was taken from the name of the file system used by optical media, which is usually ISO 9660. You can think of an ISO image as a complete copy of everything stored on a physical optical disc like CD, DVD, or Blu-ray disc—including the file system itself. They are a sector-by-sector copy of the disc, and no compression is used. The idea behind ISO images is that you can archive an exact digital copy of a disc, and then later use that image to burn a new disc that’s in turn an exact copy of the original. Most operating systems (and many utilities) also allow you to mount an ISO image as a virtual disc, in which case all your apps treat it as if a real optical disc were inserted.)*
