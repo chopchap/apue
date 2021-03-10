@@ -1,4 +1,4 @@
-# week01_notes
+# week01
 ---
 ### **Single UNIX Specification (POSIX)**
    > *POSIX.1-2017 defines a standard operating system interface and environment, including a command interpreter (or “shell”), and common utility programs to support applications portability at the source code level.*
@@ -24,6 +24,8 @@
    11. `ntp`(Network Time Protocal): 
    > *When NTP is enabled, your device contacts an NTP server to synchronize the time. When NTP is enabled, you can optionally enable your Firebox as an NTP server. When you enable your device as an NTP server, clients on your private networks can contact your Firebox to synchronize the time.*
    12. `mount`: 
-   > *whilst we are in the process of installing configuration, when all set, before reboot, mount(“mounting” a disk volume on a server into a virtual “local disk drive”, so programs can access it just like a regular physical local disk drive.) the virtual disk and edit the file /etc/rc.conf on it by typing:*
+   > *whilst we are in the process of configuration, when all set, before reboot, mount(“mounting” a disk volume on a server into a virtual “local disk drive”, so programs can access it just like a regular physical local disk drive.) the virtual disk and edit the file /etc/rc.conf on it by typing:*
       > - `mount /dev/wd0a /mnt`
       > - `vi /mnt/etc/rc.conf`
+   13. Naming scheme: 
+   > *usually, `/dev/wd0` is the name of the first disk and `/dev/wd1a` the name of the first partition on second hard disk in NetBSD (whereas /`dev/hda` and `/dev/hdb1` in Linux)*
