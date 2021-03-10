@@ -23,9 +23,20 @@
    > *ssh is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network*
    11. `ntp`(Network Time Protocal): 
    > *When NTP is enabled, your device contacts an NTP server to synchronize the time. When NTP is enabled, you can optionally enable your Firebox as an NTP server. When you enable your device as an NTP server, clients on your private networks can contact your Firebox to synchronize the time.*
-   12. `mount`: 
+   12. `mount` for mounting file system: 
    > *whilst we are in the process of configuration, when all set, before reboot, mount(“mounting” a disk volume on a server into a virtual “local disk drive”, so programs can access it just like a regular physical local disk drive.) the virtual disk and edit the file /etc/rc.conf on it by typing:*
       > - `mount /dev/wd0a /mnt`
       > - `vi /mnt/etc/rc.conf`
    13. Naming scheme: 
    > *usually, `/dev/wd0` is the name of the first disk and `/dev/wd1a` the name of the first partition on second hard disk in NetBSD (whereas /`dev/hda` and `/dev/hdb1` in Linux)*
+   14. Set up ssh
+   > *since we've set port 2222 as the communicating pipe between host and guest os, we can use command `$ ssh -p 2222 usr_name@127.0.0.1` to access guest os. Now, on the first handshake, you may need to set fingerprint, which means on your host os, use command `$ ssh-keygen -b 4096 -f ~/.ssh/filename`, this will effectively generate a record in file ~/.ssh/know_hosts and files filename & filename_pub in dir ~/.ssh/, then we need to copy the public key to your VM and install it under ~/.ssh/authorized_keys by using command `$ scp -P 2222 ~/.ssh/filename.pub usr_name@127.0.0.1:` (or you use `$ sftp usr_name@xx.xx.xx.xx` to put it in the dir of your remote guest lab os), then on your guest os, `$ mv filename.pub ~/.ssh/authorized_keys`, now you are able ssh into guest os by using `$ ssh -p 2222 -i ~/.ssh/filename usr_name@127.0.0.1`. Last step, to be able to be simply typing `$ ssh guestos` to log in, we write a heredoc:*
+   ```txt
+   cat >> ~/.ssh/config << EOF
+   heredoc> Host guestos
+   heredoc> HostName xx.xx.xx.xx
+   heredoc> IdentityFile ~/.ssh/filename
+   heredoc> Port 2222
+   heredoc> User usr_name
+   heredoc> EOF
+   ```
