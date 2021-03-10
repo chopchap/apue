@@ -32,11 +32,17 @@
    14. Set up ssh
    > *since we've set port 2222 as the communicating pipe between host and guest os, we can use command `$ ssh -p 2222 usr_name@127.0.0.1` to access guest os. Now, on the first handshake, you may need to set fingerprint, which means on your host os, use command `$ ssh-keygen -b 4096 -f ~/.ssh/filename`, this will effectively generate a record in file ~/.ssh/know_hosts and files filename & filename_pub in dir ~/.ssh/, then we need to copy the public key to your VM and install it under ~/.ssh/authorized_keys by using command `$ scp -P 2222 ~/.ssh/filename.pub usr_name@127.0.0.1:` (or you use `$ sftp usr_name@xx.xx.xx.xx` to put it in the dir of your remote guest lab os), then on your guest os, `$ mv filename.pub ~/.ssh/authorized_keys`, now you are able ssh into guest os by using `$ ssh -p 2222 -i ~/.ssh/filename usr_name@127.0.0.1`. Last step, to be able to be simply typing `$ ssh guestos` to log in, we write a heredoc:*
    ```txt
-   cat >> ~/.ssh/config << EOF
+   $ cat >> ~/.ssh/config << EOF
    heredoc> Host guestos
    heredoc> HostName xx.xx.xx.xx
    heredoc> IdentityFile ~/.ssh/filename
    heredoc> Port 2222
    heredoc> User usr_name
+   heredoc> EOF
+   ```
+   15. To start the VM again, we create an alias in our parent OS, here assuming your login shell is zsh as if in MacOS, don't forget to `$ . ~/zshrc` afterwards, of course you can use the same technique to `$ alias poff='su root -c "/sbin/shutdown -p now"'` in your guest os:
+   ```txt
+   $ cat >> ~/.bashrc << EOF
+   heredoc> alias start-guestos='VBoxManage startvm "guestos" --type headless'
    heredoc> EOF
    ```
