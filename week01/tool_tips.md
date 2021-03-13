@@ -6,3 +6,4 @@
 - `ctrl + ]` to jump onto and `ctrl + t` to jump back
 - or type `:ta func_name` to be brought to the func_name definition code
 - in order to do the same thing including all the C libraries codes, once you've downloaded the source code (e.g. in /usr/src/lib/libc/stdio for all stdio implementaion), you can create a global text file that indexes the entire source tree, and add that to our editor's list of tag files to look things up in (we use exuberant ctags since this version of ctags(1) supports ignoring certain patterns, such as macro definitons that might trip up the regex used in finding the tags). and cmd `exctags -f ~/.tags -R -I __weak_alias /usr/include /usr/src/lib` can handle it.
+- for jumping directly to the mannual page by pressing `shift + k`
