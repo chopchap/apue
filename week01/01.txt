@@ -7,10 +7,10 @@ I carefully read the course website and syllabus.
 I read chapters 01 and 02 in Stevens and the additional reading 
 of 'Unix history and basic features'
 
-I compared the different implementations of NetBSD, Linux and 
-Illumos, they have commons in argc and argv processing, and I 
-found that the NetBSD is the easier to understand since it's 
-shorter than others.
+I compared the different implementations of 'echo' & 'hostname' 
+in NetBSD, Linux and Illumos, they have commons in argc and 
+argv processing, and I found that the NetBSD is the easier to 
+understand since it's shorter than others.
 
 I wrote a small hello-world program, debugged the
 'welcome.c' program, and set up my VM with the
