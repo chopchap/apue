@@ -1,0 +1,21 @@
+# slide notes
+---
+## hard disk
+- a disk can be divided into logical partitions(e.g. BIOS partition)
+- a `drive` is a location (medium) that is capable of storing and reading information not easily removed, like a disk or disc. (e.g. floppy drive, hard drive, CD-ROW drive etc.)
+- Integrated Drive Electronics (`IDE`) is a standard interface for connecting a motherboard to storage devices such as hard drives and CD-ROM/DVD drives. (of course on your VM, the controller IDE is virtual)
+- naming schemes on NetBSD:
+![alt text](https://github.com/chopchap/apue/blob/main/images/naming%20schemes%20on%20NetBSD.png?raw=true)
+- on NetBSD, use cmd `sudo disklabel wd0` to inspect the OS-specific partition table (a+b+?=c; c+64=d):
+![alt text](https://github.com/chopchap/apue/blob/main/images/partition%20desc%20info%20on%20NetBSD%20by%20cmd%20disklabel.png?raw=true)
+  - `d:` partition describing the entire disk, starting at offset 0 and ending at the last sector
+  - `c:`partition describing the portion of the disk set for use by the NetBSD operating system, starting at offset 64 -- leaving the first sector available to the BIOS partition table
+  - `b:` for use as swap
+  - `a:` the root partition where we create our entire filesystem on
+- once we have created our partition table, we can then create a file system on each partition:
+![alt text](https://github.com/chopchap/apue/blob/main/images/Disk%20drive%2C%20partitions%2C%20and%20a%20file%20system.png?raw=true)
+  > since the entire structure of the filesystem is written in the superblock, to be safe, the filesystem replicates the superblock in cylinder groups, thereby allowing recovery due to a corrupted superblock.
+- another view of filesystem data structures:
+![alt text](https://github.com/chopchap/apue/blob/main/images/Another%20view%20of%20filesystem%20data%20structures.png?raw=true)
+  > the name of the file is itself the hard link. (a dir entry mapping a filename to an inode is known as a "hard link")
+- 
