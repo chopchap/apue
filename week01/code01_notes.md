@@ -15,4 +15,4 @@
 - `time find /usr/src/usr.bin -name '*.[ch]'` *means output clock/user CPU/sys CPU time for excuting command (user CPU + sys CPU != clock since I/O processing)*
 - `-exec cat {} \;` *invoke arbitrary commands with -exec action, like `-exec cmd {} ;` where `{}` is a symbolic representation of the current pathname, `;` is a required dilimiter indicating the end of the cmd. since the brace and simicolon characters have special meaning to the shell, you might need to quote or escape them with `\;` or `';'`*
 - `wc -l` *list the total number of lines in file*
-- `time find /usr/src/usr.bin -name '*.[ch]' -exec cat {} \; | wc -l` *is now a piece of cake*
+- `time find /usr/src/usr.bin -name '*.[ch]' -exec cat {} \; | wc -l` *means time a series of cmd(1. find specific files in specific dir; 2. use the outcome of find as parameter to excute cat cmd; 3. print total number of line) and output*
