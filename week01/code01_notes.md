@@ -1,8 +1,18 @@
-# Code01_notes
+# Code & Command notes
 ---
-## simple-shell.c
+## Codes
+### simple-shell.c
 - **fgets:** *get a line from a stream, EOF(ctrl+D) to quit*
 - **errno** *will be set if some error occurs, and it'll be a number, so better use strerror in additon to offer clarity*
-## simple-ls.c
+### simple-ls.c
 - **opendir & readdir:** *to list contents in a dir, open it first, then readdir, return types are `DIR *` and `struct dirent *` respectively*
 - **closedir**: *don't forget to close*
+---
+## Commands
+### find
+- `find /usr/src/usr.bin -name '*.[ch]'` *means find files like xx.c or xx.h under dir /dir/to/file*
+### time
+- `time find /usr/src/usr.bin -name '*.[ch]'` *means output clock/user CPU/sys CPU time for excuting command (user CPU + sys CPU != clock since I/O processing)*
+- `-exec cat {} \;` *invoke arbitrary commands with -exec action, like `-exec cmd {} ;` where `{}` is a symbolic representation of the current pathname, `;` is a required dilimiter indicating the end of the cmd. since the brace and simicolon characters have special meaning to the shell, you might need to quote or escape them with `\;` or `';'`*
+- `wc -l` *list the total number of lines in file*
+- `time find /usr/src/usr.bin -name '*.[ch]' -exec cat {} \; | wc -l` *is now a piece of cake*
