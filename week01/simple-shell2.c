@@ -46,7 +46,7 @@ main(int argc, char **argv) {
 	while (getinput(buf, sizeof(buf))) {
 		buf[strlen(buf) - 1] = '\0';
 
-		if((pid=fork()) == -1) {
+		if ((pid=fork()) == -1) {
 			fprintf(stderr, "shell: can't fork: %s\n",
 					strerror(errno));
 			continue;
