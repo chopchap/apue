@@ -1,4 +1,4 @@
-# week01_notes
+# general_notes
 ---
 ## **Single UNIX Specification (POSIX)**
    > *POSIX.1-2017 defines a standard operating system interface and environment, including a command interpreter (or “shell”), and common utility programs to support applications portability at the source code level.*
