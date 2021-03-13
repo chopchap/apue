@@ -17,7 +17,7 @@ I wrote a small hello-world program, debugged the
 suitable compiler flags and aliases.
 
 I came across this interesting article:
-https://some.website.you.found/something-relevant.html
+https://www.netmeister.org/book/02-unix.pdf
 
 Open questions:
 What's the difference between Linux and NetBSD? Aren't
