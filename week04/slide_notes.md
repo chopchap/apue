@@ -92,3 +92,8 @@ hexadecimal representation of the bytes on disk.
 ## bc(1)
 - use 'bc' utility to easily convert numbers between different bases as shown here
 - e.g. `echo "ibase=16; 4B80" | bc` to convert a 16-based 4B80 into a decimal number
+## /etc/passwd - the user database
+![/etc/passwd fields](https://github.com/chopchap/apue/blob/main/images/:etc:passwd%20fields.png?raw=true)
+- the login shell can be set to any program. Since we have a number of service accounts that we only use for privilege separation (e.g. `sshd, ntpd ...`) -- that is, to allow a process to have a dedicated UID and not have any other privileges -- but that we do not ever want to allow to log in interactively, we can set the login shell to /sbin/nologin.
+## finger(1)
+- The 'finger' command can be used to find out information about a user account. (e.g. `finger root`)
