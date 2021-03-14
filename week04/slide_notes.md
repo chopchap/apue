@@ -97,3 +97,14 @@ hexadecimal representation of the bytes on disk.
 - the login shell can be set to any program. Since we have a number of service accounts that we only use for privilege separation (e.g. `sshd, ntpd ...`) -- that is, to allow a process to have a dedicated UID and not have any other privileges -- but that we do not ever want to allow to log in interactively, we can set the login shell to /sbin/nologin.
 ## finger(1)
 - The 'finger' command can be used to find out information about a user account. (e.g. `finger root`)
+## /etc/master.passwd, see `getpw.c`
+- This file contains all the fields from /etc/passwd, plus the additional fields. And it also includes the hashed password, because /etc/passwd needs to be readable by all users to allow the _getpwuid(3) / getpwnam(3)_ calls to succeed without super-user privileges. (in Linux, /etc/shadow is the counterpart)
+- /etc/group is much the same as /etc/passwd, but a bit complicated, see `groups.c`
+- accessing similar system data files:
+![accessing similar system data files](https://github.com/chopchap/apue/blob/main/images/accessing%20system%20data%20files.png?raw=true)
+## mtime, atime, ctime
+- mtime & atime: modification & accessing time of file data, ctime: represents a change in the struct stat itself
+- `ls -l` by default print entry by mtime
+- `ls -lu` .. by atime, `ls -lc` .. by ctime
+- on NetBSD Unix's /dev/wd0a filesystem (mounted on /) for example, by default, any read on any file will trigger an update of the atime, which the filesystem then has to write to disk. That means that you constantly are triggering comparatively expensive I/O, which not only impacts overall I/O performance, but especially on solid state drives, this can actually reduce the lifespan of the drive. That's why many filesystem support a mount option to disable atime updates altogether - `noatime`; On Linux, the filesystem mount option is known as 'relatime', or "relative atime". the atime is only updated if the mtime or ctime is newer than the atime, or if the atime is older than 24 hours. This allows the filesystem to continue to support applications that depend on the atime change, but to not have to thrash the disk with I/O on read-only operations.
+- os uses `utime(3)` to perform time manipulations on files
