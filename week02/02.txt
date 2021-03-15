@@ -5,6 +5,10 @@ Before class:
 -------------
 
 Open questions:
+Can you seek backwards on a pipe?
+What happens when try to write data beyond the end of a file?
+How efficient is our simple-cat.c program from Week 1?
+Can we make it read more data faster?
 
 
 After class:
