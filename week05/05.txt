@@ -1,0 +1,22 @@
+Lecture 05
+==========
+
+Before class:
+-------------
+
+I came across this interesting web page:
+https://dev.gentoo.org/~vapier/crt.txt
+https://sourceware.org/gdb/current/onlinedocs/gdb/
+http://heather.cs.ucdavis.edu/~matloff/UnixAndC/CLanguage/Debug.html
+http://www.unknownroad.com/rtfm/gdbtut/gdbtoc.html
+http://git-scm.com/
+https://stevens.netmeister.org/631/lecture05.pdf
+https://stevens.netmeister.org/631/make-examples/
+https://stevens.netmeister.org/631/gdb-examples/
+
+Open questions:
+
+After class:
+------------
+Important take-away:
+- 
