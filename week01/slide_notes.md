@@ -18,4 +18,5 @@
 ---
 ## Extras
 - **Standard I/O**, *kernel provides **unbuffered** I/O through e.g. open(2), read(2), write(2), lseek(2), close(2) and **buffered** I/O through e.g. fopen(3), fread(3), fwrite(3), getc(3), putc(3)*
-- ![alt text](https://github.com/chopchap/apue/blob/main/images/Architecture%20of%20Unix%20operating%20system.jpeg?raw=true)
+- Architecture of Unix operating system:
+ > ![alt text](https://github.com/chopchap/apue/blob/main/images/Architecture%20of%20Unix%20operating%20system.jpeg?raw=true)
