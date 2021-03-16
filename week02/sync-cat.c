@@ -38,8 +38,8 @@ main(int argc, char **argv) {
 	(void)argv;
 
 	/* we can't call open(2) with O_SYNC to turn on synchronous 
-	 * mode since we've already opened STDOUT_FILENO, as would 
-	 * be done for normal files, so use fcntl(2) instead */
+	 * mode as would be done for normal files since we've already 
+	 * opened STDOUT_FILENO, so use fcntl(2) instead */
 	if ((flags = fcntl(STDOUT_FILENO, F_GETFL, 0)) < 0) {
 		perror("Can't get file descriptor flags");
 		exit(EXIT_FAILURE);
