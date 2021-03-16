@@ -15,6 +15,9 @@ I write a program fds.c to:
  - fopen(3)s a file, then prints the value of the file descriptor 
    referenced via that stream
    
+I write a program argv.c to:
+ - to illustrate how different shells expand arguments differently
+   
 I came across this interesting web page:
 https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html
 
