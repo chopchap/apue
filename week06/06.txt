@@ -3,10 +3,21 @@ Lecture 06
 
 Before class:
 -------------
+I read Stevens Chapters 7, 8
 
 I came across this interesting web page:
+https://manybutfinite.com/post/anatomy-of-a-program-in-memory/
+https://manybutfinite.com/post/journey-to-the-stack/
+https://www.netmeister.org/blog/sudo-unable-to-execute.html
+https://www.recurse.com/blog/7-understanding-c-by-learning-assembly
+https://insecure.org/stf/smashstack.html
+http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html
+https://www.netmeister.org/blog/stdarg.html
 
 Open questions:
+How many variables can you place into the environment?
+Is there a limit on how big the value of a single environment variable can be?
+How does increasing either or both of these numbers affect the current process or any child processes created?
 
 After class:
 ------------
