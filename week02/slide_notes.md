@@ -69,3 +69,9 @@ while I/O to stdout is likely to be _buffered_, which is why you will likely see
 ## fcntl(2)
 - fcntl(2) comes into play if we want to inspect or change file status flag when we didn't call open(2) ourselves(i.e. when all we have is a fd)
 - synchronous output will wait for I/O to be flushed to disk after each call, while asynchronous output allows the OS to handle this more efficiently and cache I/O a bit
+- `dd if=/dev/zero of=file bs=$((1024*1024)) count=10`: copy a file from /dev/zero to file in block size 10*1MB
+## ioctl(2)
+- things that aren't files at all may have certain flags or other type or device specific settings. ioctl(2) is often used to tickle those flags for things like terminal I/O, magnetic tape, etc
+## echo two | cat first /dev/stdin third
+- Unix character devices like /dev/stdin(or /dev/fd/0 maybe) allows you to write a program that processes files as well as standard input
+- `ls -l /dev/fd 2>&1 | cat` and you'll find out that `prw-rw----` in MacOS(BSD derived), which indicates file stdin is now a pipe
