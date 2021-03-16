@@ -49,3 +49,23 @@
 ## stat -f "%k" tmp/file1
 - a way to determine the optimal I/O size, i.e., the filesystem blocksize, of a given file
 - the command-line syntax for the stat(1) command differs between Unix versions, check manual (e.g. `stat -c "%o"` in Linux)
+## kernel data structures for open files
+> ![alt text](https://github.com/chopchap/apue/blob/main/images/Kernel%20data%20structures%20for%20open%20files.jpeg?raw=true)
+- _`vnode`_ allows for an abstraction of the filesystem API. Different file systems include different meta information in the vnode table entry, but for compatibility with the traditional Unix filesystem, they implement or provide all the inode information
+- If a process opens the same file twice, then the file table entries are distinct, but pointing to the same vnode table entry (Things are the same if two different processes opened the same file)
+- file status flag _`O_APPEND`_ is _atomic_, so that we don't need to do 2 ops: lseek(2) first an then write(2), which rises race conditon
+- sometimes we want to write data to a different location besides the end and avoid the race condition. pread(2) and pwrite(2), take an additional `offset` parameter and will _atomically_ seek before issuing the read(2) or write(2) operation.
+## '>' operator in shell
+- in practical shell environment, it uses these system calls to create files
+  - `$ echo foo > file # O_WRONLY | O_CREAT` if file doesn't exist
+  - `$ echo bar > file # O_WRONLY | O_CREAT | O_TRUNC` if file already exists
+  - `$ echo foo >> file # O_WRONLY | O_CREAT | O_APPEND`
+- `ls -l file /nowhere 2>/dev/null`, using the special device /dev/null we are able to ditch the output from stderr
+- in general, messages to stderr are _unbuffered_,
+while I/O to stdout is likely to be _buffered_, which is why you will likely see error messages prior to normal output when both are connected to a terminal, use syntax `2>&1` instead if you want to tell the shell to put stderr wherever stdout is regardless of where stdout goes to(e.g. `ls -l file /nowhere 2>&1 | nl`, i.e. `dup2(STDOUT_FILENO, STDERR_FILENO)` in shell source code)
+## dup(2)
+- The dup(2) system call duplicates an existing file descriptor, and you get back a second file handle pointing to the same file table entry as the first one, meaning the two share the offset and file status flags etc. *(unlike in the case where a process has called 'open(2)' on the same files multiple times and gets back file desriptors pointing to distinct file table entries that then point to the same vnode table entry)*
+- for redirection of an existing newfd since newfd in dup2(oldfd, newfd), it'll close(newfd) first
+## fcntl(2)
+- fcntl(2) comes into play if we want to inspect or change file status flag when we didn't call open(2) ourselves(i.e. when all we have is a fd)
+- synchronous output will wait for I/O to be flushed to disk after each call, while asynchronous output allows the OS to handle this more efficiently and cache I/O a bit
