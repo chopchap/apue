@@ -32,7 +32,6 @@ Important take-away:
 - always use the right compiler flags ('-Wall -Wextra -Werror')
 - despite being "unix-like", Linux and NetBSD are
   different OS with different philosophies and licenses
-- I still need to grok the pipeline example from class
 - most of the system functions return -1 when an error occurs
 - execlp function always wants a null-terminated argument
 - all threads within a process share the same address space, 
