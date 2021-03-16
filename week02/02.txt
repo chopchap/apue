@@ -40,5 +40,5 @@ Important take-away:
   doesn't use fd flag O_SYNC
 - open(2) and openat(2) are identical except when a relative path 
   is used, the fd parameter in openat(2) will specify the starting 
-  location in the file system. Other xx and xxat couple do the same
+  location in the file system. Other xx() and xxat() couples do the same
 - I implemented bbcp command as in HW#1
