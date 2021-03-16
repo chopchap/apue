@@ -38,4 +38,4 @@ Important take-away:
   if the latter is larger.
 - simple-cat.c program is quite efficient since by default it 
   doesn't use fd flag O_SYNC
-- I implemented bbcp command as in HW1
+- I implemented bbcp command as in HW#1
