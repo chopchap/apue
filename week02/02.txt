@@ -14,6 +14,9 @@ I write a program fds.c to:
    file descriptor
  - fopen(3)s a file, then prints the value of the file descriptor 
    referenced via that stream
+   
+I came across this interesting web page:
+https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html
 
 Open questions:
 Can you seek backwards on a pipe?
