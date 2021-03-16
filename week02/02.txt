@@ -3,6 +3,17 @@ Lecture 02
 
 Before class:
 -------------
+I read chapters 03 in Stevens
+
+I write a program fds.c to:
+ - print the value of the STDIN_FILENO, STDOUT_FILENO, and 
+   STDERR_FILENO constants
+ - prints the value of the file descriptors referenced via the 
+   stdin, stdout, and stderr streams
+ - open(2)s a file, then prints the value of the resulting 
+   file descriptor
+ - fopen(3)s a file, then prints the value of the file descriptor 
+   referenced via that stream
 
 Open questions:
 Can you seek backwards on a pipe?
@@ -14,4 +25,10 @@ Can we make it read more data faster?
 After class:
 ------------
 Important take-away:
-- 
+- unamed pipes or fifos can not be lseek(2)ed
+- when writing data beyond the end of a file, since the 
+  _current file size_ info in i-node has changed, kernel 
+  will comapre it with _current file offset_, and update it 
+  if the latter is larger.
+- simple-cat.c program is quite efficient since by default it 
+  doesn't use fd flag O_SYNC
