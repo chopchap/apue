@@ -23,8 +23,7 @@
 #endif
 
 static void
-my_alarm(int signo)
-{
+my_alarm(int signo) {
 	struct passwd *rootptr;
 
 	(void)signo;
