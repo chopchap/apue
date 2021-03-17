@@ -34,7 +34,7 @@ main(int argc, char **argv) {
 		//printf("%s: %d %ld\n", dirp->d_name, dirp->d_reclen, UFS_DIRECTSIZ(dirp->d_namlen));
 		//printf("%ld\n", sizeof(*dirp));
 		//printf("%s: %d %ld\n", dirp->d_name, dirp->d_reclen, UFS_DIRECTSIZ(dirp->d_namlen));
-}
+	}
 
 	closedir(dp);
 	return(0);
