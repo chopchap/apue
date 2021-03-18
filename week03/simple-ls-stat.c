@@ -52,6 +52,8 @@ main(int argc, char **argv) {
 		exit(EXIT_FAILURE);
 	}
 
+	/* call stat(2) simply by passing the filename and obviate the 
+	 * need to construct an absolute pathname. */
 	if (chdir(argv[1]) == -1) {
 		fprintf(stderr, "can't chdir to '%s': %s\n", argv[1], strerror(errno));
 		exit(EXIT_FAILURE);
