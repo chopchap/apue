@@ -1,0 +1,20 @@
+Lecture 08
+==========
+
+Before class:
+-------------
+I read Stevens Chapters 14
+
+I came across this interesting web page:
+https://stevens.netmeister.org/631/ipctut.pdf
+https://beej.us/guide/bgipc/html/single/bgipc.html
+https://web.archive.org/web/20160507131726/http://www.kohala.com/start/unpv22e/unpv22e.chap12.pdf
+https://web.archive.org/web/20180316204322/http://www.linuxdevcenter.com/pub/a/linux/2007/05/24/semaphores-in-linux.html
+https://www.softprayog.in/programming/interprocess-communication-using-posix-message-queues-in-linux
+
+Open questions:
+
+After class:
+------------
+Important take-away:
+- 
