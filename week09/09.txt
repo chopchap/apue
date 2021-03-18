@@ -1,0 +1,20 @@
+Lecture 09
+==========
+
+Before class:
+-------------
+I read Stevens Chapters 14
+
+I came across this interesting web page:
+https://stevens.netmeister.org/631/ipc.pdf
+https://ops.tips/blog/how-linux-creates-sockets/
+https://ops.tips/blog/how-linux-tcp-introspection/
+http://www.kegel.com/c10k.html
+
+
+Open questions:
+
+After class:
+------------
+Important take-away:
+- 
