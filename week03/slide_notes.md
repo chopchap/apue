@@ -36,3 +36,14 @@ indoe and a string is known as a "link" or a "hard link"
 ## ls -ls file
 - Display the number of file system blocks actually used by each file, in units of 512 bytes or BLOCKSIZE
 - `BLOCKSIZE=4096 df .` to display the info in those sized chunks
+## process IDs
+- for each process, there're six or more IDs associated with it:
+  ![alt text](https://github.com/chopchap/apue/blob/main/images/uid%26gid%20associated%20with%20each%20process.jpeg?raw=true)
+- in some cases it is useful to allow an executable to be run with changed, often elevated privileges. In that case, we set a special bit on the file's st_mode -- the setuid bit -- and the system will set the effective UID, to that of the owner of the executable. And the real UID will remain that of the user(the same can be done using group ownership and the setgid bit)
+- important take-aways:
+  1) exec sets the saved-setuid and saved-setgid;
+  2) changing the effective uid or effective group id is allowed to either the real uid or the saved-setuid or group ids respectively.
+- `cp /sbin/ping .`, copy ping(1) cmd into current dir, and we can't execute it, since the st_mode differs from the original ping by `-r-sr-xr-x` replaced by `-r-xr-xr-x`, but use `chmod u+s ./ping` does no good, the reason is that the setuid bit is only meaningful when the st_uid field in the struct stat of the executable is different from the euid of the user executing the command
+- `w` cmd presents who users are and what they are doing
+- `wall` cmd write a message to users, and when 2 users logged in on the system gets a pseudo terminal(pts/0 or pts/1), when you `ls -l /dev/pts`, notice that these devices do have group write permissions set: `crw--w----`, so when this command is executed -- no matter by whom --, it will run with an effective gid of 'tty', and since group 'tty' can write to the terminals of the logged in users, the wall(1) cmd succeeds.
+- 
