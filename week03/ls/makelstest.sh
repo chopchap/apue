@@ -10,7 +10,7 @@ touch empty
 mkfifo fifo
 echo file > file
 ln file file2
-ln "" emptylink
+#ln "" emptylink
 ln -s /nowhere
 ln -s file2 symlink
 touch -a -t 201810012222 atime
