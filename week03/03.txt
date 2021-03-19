@@ -3,7 +3,8 @@ Lecture 03
 
 Before class:
 -------------
-I read chapters 04 in Stevens
+I read chapters 04 in Stevens and compared the different implementations 
+of the stat(1) command between GNU coreutils and NetBSD
 
 I came across this interesting web page:
 
@@ -13,4 +14,11 @@ Open questions:
 After class:
 ------------
 Important take-away:
-- 
+- consistency is a good virtue. (e.g. chmod(2) to act on the file and 
+  indirect through symlinks, lchmod(2) to act on the symlink itself, 
+  fchmod(2) to act on a file descriptor, and fchmodat(2) to handle 
+  relative pathnames)
+- the specific struct stat of each os varies, but the greatest common 
+  divisor is POSIX specification
+- permission 'x' of dir to open files in it, 'r' to iterate over dir's 
+  entries, 'wx' to create or delete a file of dir.
