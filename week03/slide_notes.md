@@ -49,3 +49,15 @@ indoe and a string is known as a "link" or a "hard link"
 - `setuid(2)` will succeed if the argument given is either the current real UID, or the saved-setuid, and it will _only_ set the eUID. `setuid(2)` will set _both_ the real UID, the eUID, and the saved-setuid. This means that after a call to setuid(2), you can no longer regain any possible elevated privileges you may have had before
 - `access(2)`: we also may encounter situations where we are running with elevated privileges, but need to determine whether or not our real UID would be allowed to access a resource, instead of using cumbersome seteuid(2), use _access(2)_ instead, it will tell us whether the _real_ UID would be able to perform the action
 - All in all, if the setuid (setgid) bit is set in the permissions, the effective UID (GID) will become that of the st_uid (st_gid) of the file's struct stat at execution time.
+## permissions
+- you need to be able to execute(`x`) the directory the file is in to open a file, because to open a file you need to find the mapping of the filename to inode, which is stored in a file of type dir.("read" permissions of a dir are required only to list the contents of it, i.e. to iterate over each entry)
+- To create a new file, you need `wx` permissions on the dir in which you're creating the file. (To delete a file, the same holds true and The permissions on the file itself do not matter)
+- *permission to access checklist:*
+> ![alt text](https://github.com/chopchap/apue/blob/main/images/permission%20to%20access.png?raw=true)
+## chmod(2):
+- chmod(2) to act on the file and indirect through symlinks, lchmod(2) to act on the symlink itself, fchmod(2) to act on a file descriptor, and fchmodat(2) to handle relative pathnames, all as usual.
+## chown(2):
+- Only root can change the owner of a file, but the owner may change the group ownership of a file, including to any one of their supplementary groups
+## umask(2):
+- ownership of new file
+> ![alt text](https://github.com/chopchap/apue/blob/main/images/ownership%20of%20new%20file.png?raw=true)
