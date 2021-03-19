@@ -1,6 +1,7 @@
 # tool tips
 ---
 # screen(1)
+- screen - screen manager with VT100/ANSI terminal emulation
 - `sudo pkgin -y install screen` cmd to download it
 - `screen` to enter program screen, `exit` to exit
 - `ctrl+a c` to create a second window
