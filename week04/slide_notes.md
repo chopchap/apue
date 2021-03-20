@@ -1,7 +1,15 @@
 # slide notes
 ---
-## hard disk
+## hard disk (HDD)
 - a disk can be divided into logical partitions(e.g. BIOS partition)
+- There are three different kinds of hard drives: SATA, SSD and NVMe. (Serial Advanced Technology Attachment, Solid State Drive, Non-Volatile Memory Express)
+![alt text](https://github.com/chopchap/apue/blob/main/images/three%20types%20of%20HDD.png?raw=true)
+  - Pros for SATA: Low cost, High disk sizes
+  - Cons for SATA: Not good for laptops, Requires regular de-fragmentation
+  - Pros for SSD: Fast; More durable; especially for laptops
+  - Cons for SSD: More expensive than SATA drives; Lower disk sizes
+  - Pros for NVMe: Fastest disk type on the market
+  - Cons for NVMe: Extremely expensive; Available for desktop PCs only; May require replacing main board to get full benefit
 - a `drive` is a location (medium) that is capable of storing and reading information not easily removed, like a disk or disc. (e.g. floppy drive, hard drive, CD-ROW drive etc.)
 - Integrated Drive Electronics (`IDE`) is a standard interface for connecting a motherboard to storage devices such as hard drives and CD-ROM/DVD drives. (of course on your VM, the controller IDE is virtual)
 - naming schemes on NetBSD:
