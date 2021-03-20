@@ -18,4 +18,10 @@
 - another view of filesystem data structures:
 ![alt text](https://github.com/chopchap/apue/blob/main/images/Another%20view%20of%20filesystem%20data%20structures.png?raw=true)
   > the name of the file is itself the hard link. (a dir entry mapping a filename to an inode is known as a "hard link")
+- mapping of dir in filesystem:
+![alt text](https://github.com/chopchap/apue/blob/main/images/mapping%20of%20dir%20in%20filesystem.png?raw=true)
+  > - The Unix Filesystem may store the contents of a dir on reserved dir data blocks, for efficiency reasons possibly kept separate from the data blocks used for regular files
+  > - '.' and '..' dir allow you to maneuvre the file system hierarchy via relative paths
+  > - dir name is the mapping found in a directory's parent directory
+  > - now we see why such hard links can only exist within the same filesystem and why the `st_dev` field is required to, in combination with the `st_ino` field uniquely identify a file.
 - 
