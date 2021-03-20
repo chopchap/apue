@@ -44,4 +44,9 @@
   > - '.' and '..' dir allow you to maneuver the file system hierarchy via relative paths
   > - dir name is the mapping found in a dir's parent dir
   > - now that we see why such hard links can only exist within the same filesystem, and why the `st_dev` in combination with the `st_ino` field is required to uniquely identify a file.
-- 
+## link(2)
+- since reasons listed, symbolic links were invented:
+  1. Unix systems have not implemented hardlinks across filesystem
+  2. creating a hardlink to a dir is not permitted unless the effective UID is 0. (hardlink to a directory might cause a filesystem hierarchy loop)
+## unlink(2)
+- the system will only release the data blocks when both the link count is 0 and no process has an open file handle to this file.
