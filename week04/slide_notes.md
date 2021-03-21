@@ -48,5 +48,16 @@
 - since reasons listed, symbolic links were invented:
   1. Unix systems have not implemented hardlinks across filesystem
   2. creating a hardlink to a dir is not permitted unless the effective UID is 0. (hardlink to a directory might cause a filesystem hierarchy loop)
-## unlink(2)
+## unlink(2), see `wait-unlink.c`
 - the system will only release the data blocks when both the link count is 0 and no process has an open file handle to this file.
+## rename(2), see `rename.c`
+- tmpfs is a separate system mounted on `/tmp` -- a memory filesystem in many Unix or Unix-like operating systems. (`df` can check to see)
+## symlink(2), see `lns.c`
+- it's possible to create cyclical chains of symlinks. The filesystem detects this and errors out rather than going into infinite dereferencing loops.
+- unlike hardlinks, you can create symbolic links across filesystems
+- `ls -l` can tell us what the symlink points to with **readlink(2)** syscall since there's no lopen(2)
+## directories, see `simple-ls.c`
+- opening dirs and listing its contents requires `r--` permissions on the dir, but accessing any files inside a dir will require `--x` on the dir
+- the fts(3) library provide a lot of additional convenience if you want to traverse file system hierarchies (these lib functions actually call opendir/readdir syscalls; Not guaranteed to be available on all Unix versions)
+## chdir(2): see `cd.c`
+- The current working directory is specific to the current process, and changing the current working directory can only work within the same process, which is why 'cd' must always be a shell builtin and cannot be a standalone executable.  Even if your OS may ship one.
