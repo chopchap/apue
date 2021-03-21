@@ -6,6 +6,8 @@ Before class:
 I read chapters 04 & 06 in Stevens
 
 I came across this interesting web page:
+https://www.netmeister.org/book/04-file-systems.pdf
+https://nostarch.com/download/samples/ao2e_ch8.pdf
 
 Open questions:
 what's the parent directory of the root of the filesystem, "/"?
