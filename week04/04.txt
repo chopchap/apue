@@ -11,7 +11,8 @@ https://nostarch.com/download/samples/ao2e_ch8.pdf
 
 Open questions:
 what's the parent directory of the root of the filesystem, "/"?
-What are the inodes of "dot" and "dot dot" there?
+what are the inodes of "dot" and "dot dot" there?
+what is the maximum pathname? (not filename)
 
 
 After class:
