@@ -46,7 +46,8 @@
   > - The Unix Filesystem may store the contents of a dir on reserved dir data blocks, for efficiency reasons possibly kept separate from the data blocks used for regular files
   > - '.' and '..' dir allow you to maneuver the file system hierarchy via relative paths
   > - dir name is the mapping found in a dir's parent dir
-  > - now that we see why such hard links can only exist within the same filesystem, and why the `st_dev` in combination with the `st_ino` field is required to uniquely identify a file.
+  > - now that we see why such hard links can only exist within the same filesystem, and why the `st_dev` (i.e. the device number) in combination with the `st_ino` (i.e. inode number) field is required to uniquely identify a file.
+  > - on the _root_ filesystem, both '.' and '..' in the root directory _do_ point to the same inode. But that is the only instance of dot and dot dot pointing to the same directory, since only in the root do you **NOT** have a parent directory.
 ## link(2)
 - since reasons listed, symbolic links were invented:
   1. Unix systems have not implemented hardlinks across filesystem
@@ -64,3 +65,30 @@
 - the fts(3) library provide a lot of additional convenience if you want to traverse file system hierarchies (these lib functions actually call opendir/readdir syscalls; Not guaranteed to be available on all Unix versions)
 ## chdir(2): see `cd.c`
 - The current working directory is specific to the current process, and changing the current working directory can only work within the same process, which is why 'cd' must always be a shell builtin and cannot be a standalone executable.  Even if your OS may ship one.
+## jot(1)
+- e.g. `jot 40 3`, print 40 numbers start from 3
+## xargs(1)
+- the xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.
+- e.g. `jot 40 3 | xargs touch` to create 40 files
+## create a long file name
+- `yes a` - output 'a' string forever
+- `head -1024` - display first 1024 lines of a file
+- `tr -d '\n'` - delete '\n' characters from the input
+- `touch $( yes a | head -255 | tr -d '\n' )`: create a file name with 255 characters of 'a'
+## start from scratch with a brand new filesystem on our disk
+> 1. cd /
+> 2. sudo umount /mnt
+> 3. sudo newfs -b 4096 /dev/rwd1a
+> 4. sudo mount /dev/wd1a /mnt
+> 5. sudo chown chopchop /mnt
+## hexdump(1)
+- use the 'hexdump' utility to provide us with the
+hexadecimal representation of the bytes on disk.
+- on NetBSD, you can `hexdump -C .` to see a what's in a dir
+- by examine this, we know that how the filesystem manages the directory: it uses the directory entry length to identify where the next directory entry begins; but if the filename length of the entry (plus padding) is shorter than the directory entry, then we have space to add a new entry at this point.
+- But removing a directory entry doesn't have to go and erase the data inside of the directory. All we need to do is update the previous directory entry's length to span the entry we just removed.
+- directories are filesystem dependent, and different filesystems may implement them differently. (e.g. / and /tmp are different from each other)
+- a directory may grow in size, but not shrink, due to the way it juggles the different entries of varying lengths.
+## bc(1)
+- use 'bc' utility to easily convert numbers between different bases as shown here
+- e.g. `echo "ibase=16; 4B80" | bc` to convert a 16-based 4B80 into a decimal number
