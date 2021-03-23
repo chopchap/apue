@@ -18,4 +18,11 @@ where do UIDs come from?
 After class:
 ------------
 Important take-away:
-- 
+- the inode number of '..' and '.' is actually the same, this is the 
+  only special case for /
+- a maximum path of 4096 characters for most Unix version
+- UIDs come from /etc/passwd and /etc/master.passwd, they're 
+  an identifier designated by OS
+- the Unix file system is a tree-like structure, rooted at /; 
+  different file systems can be attached at different directories or 
+  mount points.
