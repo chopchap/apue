@@ -108,3 +108,17 @@ hexadecimal representation of the bytes on disk.
 - `ls -lu` .. by atime, `ls -lc` .. by ctime
 - on NetBSD Unix's /dev/wd0a filesystem (mounted on /) for example, by default, any read on any file will trigger an update of the atime, which the filesystem then has to write to disk. That means that you constantly are triggering comparatively expensive I/O, which not only impacts overall I/O performance, but especially on solid state drives, this can actually reduce the lifespan of the drive. That's why many filesystem support a mount option to disable atime updates altogether - `noatime`; On Linux, the filesystem mount option is known as 'relatime', or "relative atime". the atime is only updated if the mtime or ctime is newer than the atime, or if the atime is older than 24 hours. This allows the filesystem to continue to support applications that depend on the atime change, but to not have to thrash the disk with I/O on read-only operations.
 - os uses `utime(3)` to perform time manipulations on files
+## gettimeofday(2), see `time.c`
+- get time elapsed since the epoch
+- `clock_gettime(2)` to get granularity nanoseconds
+- `diff -bu file[12]`
+  - `-b`: ignore changes in the amount of white space
+  - `-u`: output lines of unified context
+- `$ date +%s` cmd has the same effect
+- `gmtime(3)` to break down the time_t into a struct `tm`, 
+- `asctime(3)` takes a struct tm and formats it into a string readable for human
+- `mktime(3)` operates in the inverse direction from gmtime/localtime.
+- `ctime(3)` is like asctime(3) but takes a `time_t *` instead of a `struct tm *`
+- `strftime(3)` can format time like `$ date +%Y-%m-%dT%H:%M:%SZ`
+- picture for converting one into another:
+![time is headache](https://github.com/chopchap/apue/blob/main/images/time%20is%20a%20concept.png?raw=true)
