@@ -148,10 +148,10 @@ string_to_flags(char **stringp, u_long *setp, u_long *clrp)
 			TEST(p, "dump", UF_NODUMP);
 			return (1);
 		case 'n':
-				/*
-				 * Support `nonodump'. Note that
-				 * the state of clear is not changed.
-				 */
+			/*
+			 * Support `nonodump'. Note that
+			 * the state of clear is not changed.
+			 */
 			TEST(p, "nodump", UF_NODUMP);
 			return (1);
 		case 'o':
