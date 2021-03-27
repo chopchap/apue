@@ -6,6 +6,7 @@ Before class:
 I read Stevens Chapters 7, 8
 
 I came across this interesting web page:
+https://manybutfinite.com/post/anatomy-of-a-program-in-memory/
 https://manybutfinite.com/post/journey-to-the-stack/
 https://www.netmeister.org/blog/sudo-unable-to-execute.html
 https://www.recurse.com/blog/7-understanding-c-by-learning-assembly
