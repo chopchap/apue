@@ -16,8 +16,10 @@ https://www.netmeister.org/blog/stdarg.html
 
 Open questions:
 How many variables can you place into the environment?
-Is there a limit on how big the value of a single environment variable can be?
-How does increasing either or both of these numbers affect the current process or any child processes created?
+Is there a limit on how big the value of a single environment 
+variable can be?
+How does increasing either or both of these numbers affect the 
+current process or any child processes created?
 
 After class:
 ------------
