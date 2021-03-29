@@ -1,0 +1,18 @@
+Lecture 07
+==========
+
+Before class:
+-------------
+I read Stevens Chapters 9, 10
+
+I came across this interesting web page:
+https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap11.html#tag_11
+https://notes.shichao.io/apue/ch9/
+https://www.informit.com/articles/article.aspx?p=366888&seqNum=7
+
+Open questions:
+
+After class:
+------------
+Important take-away:
+- 
