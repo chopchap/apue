@@ -46,11 +46,25 @@
   - `$ ipcs -s`: cmd displays information about active semaphores.
   - IPC data flow
   ![IPC data flow](https://github.com/chopchap/apue/blob/main/images/IPC%20data%20flow.png?raw=true)
-  - shared memory:
-  ![shared memory](https://github.com/chopchap/apue/blob/main/images/shared%20memory.png?raw=true)
-    - fastest form of IPC
-    - access to shared region of memory often controlled using semaphores
-    - obtain a shared memory identifier by using `shmget(2)`
-    - attach shared memory segment to a processes address space by callying `shmat(2)`
-    - detail it using `shmdt(2)`
-    - catch-all for shared memory operations: `shmctl(2)`
+- shared memory:
+![shared memory](https://github.com/chopchap/apue/blob/main/images/shared%20memory.png?raw=true)
+  - fastest form of IPC
+  - access to shared region of memory often controlled using semaphores
+  - obtain a shared memory identifier by using `shmget(2)`
+  - attach shared memory segment to a processes address space by callying `shmat(2)`
+  - detail it using `shmdt(2)`
+  - catch-all for shared memory operations: `shmctl(2)`
+- message queues:
+  - linked list of messages stored in kernel space
+  - create or open existing queue using `msgget(2)`
+  - add message at end of queue using `msgsnd(2)`
+  - receive message from queue using `msgrcv(2)`
+  - control queue properties using `msgctl(2)`
+  - POSIX message queues: mq(3)
+    - message queues are identified by a named identifier (no `ftok(3) needed`)
+    - message queues may or may not be exposed in the filesystem (e.g., /dev/mqueue)
+    - `mqsend(3)` and `mqreceive(3)` allow both blocking and non-blocking calls
+    - `mqsend(3)` lets you specify a priority; equal priority messages are queued as a FIFO, but higher priority messages are inserted before those of a lower priority
+    - `mq(3)` provides an asynchronous notification mechanism: `mqnotify(3)`
+## Pipes and FIFOs
+- 
