@@ -38,4 +38,19 @@
     - network communication
     - variable data
 ## System V IPC
-- 
+- System V IPC mechanisms use specific IPC kernel structures, utilizing an _identifier_ and a _key_ to reference these in-kernel resources, and as a result, they are obviously and necessarily restricted to communications between processes on the _same_ system.
+- System V IPC structures are persistent, the structures will remain present even after a process that created or accessed them has terminated.
+- semephores:
+  - use `semget(2)`, `semctl(2)`, and `semop(2)`.
+  - see `semdemo.c`
+  - `$ ipcs -s`: cmd displays information about active semaphores.
+  - IPC data flow
+  ![IPC data flow](https://github.com/chopchap/apue/blob/main/images/IPC%20data%20flow.png?raw=true)
+  - shared memory:
+  ![shared memory](https://github.com/chopchap/apue/blob/main/images/shared%20memory.png?raw=true)
+    - fastest form of IPC
+    - access to shared region of memory often controlled using semaphores
+    - obtain a shared memory identifier by using `shmget(2)`
+    - attach shared memory segment to a processes address space by callying `shmat(2)`
+    - detail it using `shmdt(2)`
+    - catch-all for shared memory operations: `shmctl(2)`
