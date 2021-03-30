@@ -1,0 +1,41 @@
+# slide notes
+---
+## Interprocess Communication Intro
+- forms:
+  - two processes reading from/writing to a file on a shared file system
+    - asynchronous
+    - bidirectional
+    - related / unrelated processes
+    - variable data
+  - signals
+    - asynchronous
+    - related / unrelated processes
+  - semaphores (primarily used as a locking mechanism)
+    - asynchronous
+    - related / unrelated processes
+  - shared memory / message queues
+    - asynchronous
+    - bidirectional
+    - related / unrelated processes
+    - variable data
+  - pipes
+    - synchronous
+    - related processes
+    - variable data
+  - fifos
+    - synchronous
+    - related / unrelated processes
+    - variable data
+  - socketpairs
+    - synchronous
+    - bidirectional
+    - related processes
+    - variable data
+  - sockets
+    - synchronous
+    - bidirectional
+    - related / unrelated processes
+    - network communication
+    - variable data
+## System V IPC
+- 
