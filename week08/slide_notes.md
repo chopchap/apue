@@ -67,4 +67,15 @@
     - `mqsend(3)` lets you specify a priority; equal priority messages are queued as a FIFO, but higher priority messages are inserted before those of a lower priority
     - `mq(3)` provides an asynchronous notification mechanism: `mqnotify(3)`
 ## Pipes and FIFOs
-- 
+- `pipe(2)`: takes as argument an array of file descriptors, which it will connect to the read and write end of this newly created pipe. (see `pipe[12].c`)
+![pipe](https://github.com/chopchap/apue/blob/main/images/pipe.png?raw=true)
+- since creating a pipe and then writing data into a second program is something that is needed quite often. Likewise, a program that executes another program and then reads the output from that program. Both are very common use cases, so we have `popen(3)`
+- `mkfifo(2)`: the advantage of a fifo is that the data does not actually end up on disk and is consumed in sequence as it is written to the FIFO.
+- pipe(2) and FIFOs
+  - basis of the Unix Philosophy of building filters and operating on text streams
+  - pipes require a common ancestor, FIFOs do not
+  - data written into a pipe is no longer line buffered
+  - can have multiple readers/writers (PIPE_BUF bytes are guaranteed to not be interleaved)
+  - Behavior after closing one end:
+    - read(2) from a pipe whose write end has been closed returns 0 after all data has been read
+    - write(2) to a pipe whose read end has been closed generates SIGPIPE; if caught or ignored, write(2) returns an error and sets errno to EPIPE.
