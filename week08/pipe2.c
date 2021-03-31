@@ -90,7 +90,8 @@ main(int argc, char **argv)
 			argv0 = pager;
 
 		/* We could of course lie about our name: */
-		//argv0 = "tar";
+		// `$ ps -o pid,ppid,stat,comm` can list the process table
+		argv0 = "tar";
 		execlp(pager, argv0, (char *) 0);
 		(void)fprintf(stderr, "execl error for %s: %s\n",
 				pager, strerror(errno));
