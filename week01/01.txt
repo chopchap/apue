@@ -9,7 +9,7 @@ of 'Unix history and basic features'
 
 I compared the different implementations of 'echo' & 'hostname' 
 in NetBSD, Linux and Illumos, they have commons in argc and 
-argv processing, and I found that the NetBSD is the easier to 
+argv processing, and I found that the NetBSD version is easier to 
 understand since it's shorter than others.
 
 I wrote a small hello-world program, debugged the
