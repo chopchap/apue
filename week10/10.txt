@@ -1,0 +1,15 @@
+Lecture 10
+==========
+
+Before class:
+-------------
+
+I came across this interesting web page:
+https://stevens.netmeister.org/631/10-daemons.pdf
+
+Open questions:
+
+After class:
+------------
+Important take-away:
+- 
