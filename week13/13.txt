@@ -1,0 +1,22 @@
+Lecture 13
+==========
+
+Before class:
+-------------
+
+I came across this interesting web page:
+https://www.netmeister.org/blog/restricting-processes.html
+https://www.netbsd.org/~rmind/pub/netbsd_5_scheduling_apis.pdf
+https://stevens.netmeister.org/631/13-acls.pdf
+https://stevens.netmeister.org/631/13-euids-restricting-root.pdf
+https://stevens.netmeister.org/631/13-shells-chroots-jails.pdf
+https://stevens.netmeister.org/631/13-priorities.pdf
+https://stevens.netmeister.org/631/13-cpusets.pdf
+https://stevens.netmeister.org/631/13-containers.pdf
+
+Open questions:
+
+After class:
+------------
+Important take-away:
+- 
