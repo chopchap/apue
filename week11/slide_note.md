@@ -14,7 +14,7 @@
       - The segments pointed to from the program header table are used to provide information required at execution time, while the segments pointed to from the section header table are used at link time.
   - `$ hexdump -C main.o | head 2`
   - `$ readelf -h main.o`
-# Of Linkers and Loaders
+## Of Linkers and Loaders
 - The compiler chain:
   1. `$ cpp crypt.c crypt.i`
   2. `$ cc -S crypt.i`
@@ -25,7 +25,7 @@
 - `kdump(1)`: display kernel trace data
 - runtime linker:
   ![runtime linker](https://github.com/chopchap/apue/blob/main/images/runtime%20linker.png?raw=true)
-# Shared Libraries
+## Shared Libraries
 - How do shared libraries work?
   - at _link time_, the linker resolves undefined symbols
   - contents of object files and _static library_ are pulled into the executable at link time
