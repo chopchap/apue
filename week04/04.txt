@@ -8,6 +8,14 @@ I read chapters 04 & 06 in Stevens
 I came across this interesting web page:
 https://www.netmeister.org/book/04-file-systems.pdf
 https://nostarch.com/download/samples/ao2e_ch8.pdf
+https://stevens.netmeister.org/631/04-ufs.pdf
+https://stevens.netmeister.org/631/04-links.pdf
+https://stevens.netmeister.org/631/04-dirs.pdf
+https://stevens.netmeister.org/631/04-dirsize.pdf
+https://stevens.netmeister.org/631/04-etc-passwd.pdf
+https://stevens.netmeister.org/631/04-getpwuid.pdf
+https://stevens.netmeister.org/631/04-amctimes.pdf
+https://stevens.netmeister.org/631/04-time.pdf
 
 Open questions:
 what's the parent directory of the root of the filesystem, "/"?
