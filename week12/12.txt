@@ -1,0 +1,20 @@
+Lecture 12
+==========
+
+Before class:
+-------------
+I read Stevens Chapters 14
+
+I came across this interesting web page:
+https://stevens.netmeister.org/631/12-syslog.pdf
+https://stevens.netmeister.org/631/12-nonblocking.pdf
+https://stevens.netmeister.org/631/12-locking.pdf
+https://stevens.netmeister.org/631/12-aio-mmap.pdf
+https://stevens.netmeister.org/631/lecture12.pdf
+
+Open questions:
+
+After class:
+------------
+Important take-away:
+- 
