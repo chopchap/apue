@@ -13,6 +13,12 @@ https://www.recurse.com/blog/7-understanding-c-by-learning-assembly
 https://insecure.org/stf/smashstack.html
 http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html
 https://www.netmeister.org/blog/stdarg.html
+https://stevens.netmeister.org/631/06-memory-layout.pdf
+https://stevens.netmeister.org/631/06-program-start.pdf
+https://stevens.netmeister.org/631/06-program-termination.pdf
+https://stevens.netmeister.org/631/06-env.pdf
+https://stevens.netmeister.org/631/06-limits-pids.pdf
+https://stevens.netmeister.org/631/06-process-control.pdf
 
 Open questions:
 How many variables can you place into the environment?
