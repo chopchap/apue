@@ -11,6 +11,8 @@ https://lwn.net/Articles/276782/
 https://web.archive.org/web/20150320212734/http://www.iecc.com/linker/
 https://www.akkadia.org/drepper/dsohowto.pdf
 https://stevens.netmeister.org/631/elf.html
+https://stevens.netmeister.org/631/11-elf.pdf
+https://stevens.netmeister.org/631/11-linker-loader.pdf
 https://stevens.netmeister.org/631/11-shlibs.pdf
 
 
