@@ -7,6 +7,11 @@ I read chapters 04 in Stevens and compared the different implementations
 of the stat(1) command between GNU coreutils and NetBSD
 
 I came across this interesting web page:
+https://stevens.netmeister.org/631/03-stat.pdf
+https://stevens.netmeister.org/631/03-uids.pdf
+https://stevens.netmeister.org/631/03-perms.pdf
+https://stevens.netmeister.org/631/03-chmod-chown.pdf
+https://stevens.netmeister.org/631/03-umask.pdf
 
 Open questions:
 
