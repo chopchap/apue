@@ -18,6 +18,9 @@ suitable compiler flags and aliases.
 
 I came across this interesting article:
 https://www.netmeister.org/book/02-unix.pdf
+https://stevens.netmeister.org/631/01-introduction.pdf
+https://stevens.netmeister.org/631/01-history.pdf
+https://stevens.netmeister.org/631/01-basics.pdf
 
 Open questions:
 What's the difference between Linux and NetBSD? Aren't
