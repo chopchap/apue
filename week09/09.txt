@@ -10,6 +10,11 @@ https://stevens.netmeister.org/631/ipc.pdf
 https://ops.tips/blog/how-linux-creates-sockets/
 https://ops.tips/blog/how-linux-tcp-introspection/
 http://www.kegel.com/c10k.html
+https://stevens.netmeister.org/631/09-socketpairs.pdf
+https://stevens.netmeister.org/631/09-sockets-local.pdf
+https://stevens.netmeister.org/631/09-sockets-inet-dgram.pdf
+https://stevens.netmeister.org/631/09-sockets-inet6-stream.pdf
+https://stevens.netmeister.org/631/09-io-multiplexing.pdf
 
 
 Open questions:
