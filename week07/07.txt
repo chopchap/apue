@@ -9,6 +9,11 @@ I came across this interesting web page:
 https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap11.html#tag_11
 https://notes.shichao.io/apue/ch9/
 https://www.informit.com/articles/article.aspx?p=366888&seqNum=7
+https://stevens.netmeister.org/631/07-login-process.pdf
+https://stevens.netmeister.org/631/07-process-groups-and-sessions.pdf
+https://stevens.netmeister.org/631/07-job-control.pdf
+https://stevens.netmeister.org/631/07-signals.pdf
+https://stevens.netmeister.org/631/07-reentrant.pdf
 
 Open questions:
 
