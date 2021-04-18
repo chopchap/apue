@@ -1,0 +1,22 @@
+Lecture 11
+==========
+
+Before class:
+-------------
+I read Stevens Chapters 13
+
+I came across this interesting web page:
+http://jvns.ca/blog/2014/09/06/how-to-read-an-executable/
+https://lwn.net/Articles/276782/
+https://web.archive.org/web/20150320212734/http://www.iecc.com/linker/
+https://www.akkadia.org/drepper/dsohowto.pdf
+https://stevens.netmeister.org/631/elf.html
+https://stevens.netmeister.org/631/11-shlibs.pdf
+
+
+Open questions:
+
+After class:
+------------
+Important take-away:
+- 
