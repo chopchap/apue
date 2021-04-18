@@ -20,6 +20,10 @@ I write a program argv.c to:
    
 I came across this interesting web page:
 https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html
+https://stevens.netmeister.org/631/02-fds.pdf
+https://stevens.netmeister.org/631/02-open-close.pdf
+https://stevens.netmeister.org/631/02-read-write-lseek.pdf
+https://stevens.netmeister.org/631/02-file-sharing.pdf
 
 Open questions:
 Can you seek backwards on a pipe?
